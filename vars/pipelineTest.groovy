@@ -1,17 +1,20 @@
-pipeline {
-    agent any
-    stages{
-        stage("Hello World"){
-            steps{
-                script{
-                    print "Hello World"
+def call(body){
+    pipeline {
+        agent any
+        stages{
+            stage("Hello World"){
+                steps{
+                    script{
+                        print "Hello World"
+                    }
                 }
             }
         }
-    }
-    post{
-        always{
-            cleanWs()
+        post{
+            always{
+                cleanWs()
+            }
         }
     }
+    
 }
